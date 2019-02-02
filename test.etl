@@ -1,0 +1,12 @@
+require_relative 'my_source'
+require_relative 'my_destination'
+
+source TestSource
+
+transform do |row|
+  row['fname'] += 'xyz'
+  puts row
+  row
+end
+
+destination MyDestination
